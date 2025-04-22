@@ -3,15 +3,15 @@ import { FormControl } from "@/components/ui/form-control";
 import { HStack } from "@/components/ui/hstack";
 import { Icon } from "@/components/ui/icon";
 import { Input, InputField } from "@/components/ui/input";
+import { useRouter } from "expo-router";
 import { ScanBarcode } from "lucide-react-native";
 import { TextInputProps } from "react-native";
 
 type HeaderProps = TextInputProps;
 
 export function Header({ ...props }: HeaderProps) {
-  const handleNewShoppingList = () => {
-    console.log("vai abrir a camera e iniciar um nova lista");
-  };
+  const router = useRouter();
+  const handleNewShoppingList = () => router.push("/camera-scan");
   return (
     <HStack space="sm" className="justify-between">
       <FormControl className="flex-1">
